@@ -71,12 +71,26 @@ main {
     background-image: url('../img/etT14XfDEqhQZdD47ywpyihXPyW.jpg');
     background-position: left calc((50vw -170px) -340px) top;
     background-size: cover;
-
+    position: relative;
+}
+.highlight .highlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: 
+    linear-gradient(to right, 
+        rgba(17,17,17,1) calc((50vw - 70px) - 340px), 
+        rgba(17,17,17,0.7) 50%,  
+        rgba(17,17,17,0.7) 100%);
 }
 .highlight .highlight-content {
     display: flex;
     gap: 2rem;
     padding: 2rem 0;
+    z-index: 2;
 }
 .highlight .highlight-poster {
     border-radius: 0.5rem;
@@ -107,7 +121,8 @@ main {
     flex-direction: column;
     gap: 0.5rem;
 }
-.highlight .highlight-sinopse h3 {
+.highlight .highlight-sinopse h4 {
+    font-size: 1.5rem;
     font-weight: 400;
     padding-top: 3rem;
     padding-bottom: 0.5rem;
@@ -147,4 +162,90 @@ main {
     background-color: rgba(255,255,255, 0.3);   
 }
 
+.categories {
+    display: flex;
+    background-color: #1c1c1c;
+    border-bottom: 1px solid #333;
+}
+.categories ol {
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+    padding: 1.5rem 0;
+}
+.categories a {
+    color: #ccc;
+    text-decoration: none;
+}
+.categories a.active {
+    color: #e50914;
+    border-bottom: 2px solid #e50914;
+}
+.categories a:hover {
+    color: #fff;
+}
+.categories a.active:hover {
+    color: #e50914;
+}
+
+.movies {
+    background-color: #1c1c1c;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+.movies .movie-card {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.movies .movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.movies .movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.movies .movie-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.movies .movie-card p {
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+}
+
 /* FOOTER - Rodapé */
+footer {
+    background-color: #1c1c1c;
+    border-top: 1px solid #333;
+    padding: 3rem;
+}
+footer .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+footer p {
+    color: #a0a0a0;
+    font-size: 0.8rem;
+}
+footer ul {
+    display: flex;
+    list-style-type: none;
+    margin-top: 1rem;
+    gap: 0.8rem
+}
+footer a {
+    color: #a0a0a0;
+}
+footer a:hover {
+    color: #fff;
+}
